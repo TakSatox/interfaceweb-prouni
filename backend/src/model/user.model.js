@@ -1,31 +1,28 @@
 const {Sequelize, DataTypes} = require("sequelize");
 const sequelize = require("../config/database");
-const Species = require("./species.model");
 
 
-const Products = sequelize.define(
-    "products",
+const User = sequelize.define(
+    "users",
     {
         CÓDIGO: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        DESCRIÇÃO: {
+        USUÁRIO: {
             type: DataTypes.STRING,
             allowNull: false,
         },
 
-        UNIDADE: {
+        SENHA: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
+        }
     },
     {
         timestamps: true,
     }
 );
 
-Products.Species = Species.hasMany(Products);
-
-module.exports = Products;
+module.exports = User;
