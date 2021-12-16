@@ -1,3 +1,3 @@
 /backend/node_modules
-/frontend
 /backend/src/.env
+/backend/src/config/.env

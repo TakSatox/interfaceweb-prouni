@@ -1,10 +1,9 @@
-const {Sequelize, DataTypes} = require("sequelize");
+const {DataTypes} = require("sequelize");
 const sequelize = require("../config/database");
-const Species = require("./species.model");
 
 
-const Produtos = sequelize.define(
-    "products",
+const Species = sequelize.define(
+    "species",
     {
         CÓDIGO: {
             type: DataTypes.INTEGER,
@@ -15,17 +14,11 @@ const Produtos = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
-
-        UNIDADE: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
     },
     {
         timestamps: true,
     }
 );
 
-Produtos.Species = Species.hasMany(Produtos);
+module.exports = Species;
 
-module.exports = Produtos;
